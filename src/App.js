@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import Header from './components/Header'
-import Form from './components/Form'
 import List from './components/List'
 
 // =========================================
@@ -94,7 +93,6 @@ componentDidMount() {
           fridgeItems={this.state.fridgeItems}
         />
 
-        <Form />
 
       </div>
     );

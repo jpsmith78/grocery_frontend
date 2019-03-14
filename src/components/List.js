@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 
 import ListItem from './ListItem'
+import ListForm from './ListForm'
+
 import FridgeItem from './FridgeItem'
+import FridgeForm from './FridgeForm'
 
 
 
 class List extends Component {
+  handleCreateListItem = (item)=>{
+    console.log(item);
+  }
+
   render(){
     return(
       <div className="list">
@@ -20,6 +27,9 @@ class List extends Component {
                 />
               )
             })}
+            <ListForm
+              handleCreateListItem={this.handleCreateListItem}
+            />
           </div> :
           <div>
             {this.props.fridgeItems.map((item, index)=>{
@@ -30,6 +40,7 @@ class List extends Component {
                 />
               )
             })}
+            <FridgeForm />
           </div>
         }
       </div>
