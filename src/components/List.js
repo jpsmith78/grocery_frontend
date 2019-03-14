@@ -8,6 +8,10 @@ class List extends Component {
     return(
       <div className="list">
         <ListItem />
+        {this.props.currentView === 'shoppinglist' ?
+          <div>this is the shopping list view</div> :
+          <div>this is the refigerator view</div>
+        }
       </div>
     )
   }
