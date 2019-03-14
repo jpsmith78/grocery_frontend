@@ -4,9 +4,19 @@ import React, { Component } from 'react';
 class ListItem extends Component {
   render(){
     return (
-      <div className="list_item">
-        <h3>This is the list item component</h3>
-      </div>
+      <React.Fragment>
+
+        <div className="list_item">
+          {this.props.item.item}<br/>
+          {this.props.item.category}<br/>
+          {this.props.item.price}<br/>
+        </div>
+
+        <div className="list_action">
+          <button>delete</button>
+        </div>
+
+      </React.Fragment>
     )
   }
 }

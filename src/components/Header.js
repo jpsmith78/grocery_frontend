@@ -10,11 +10,11 @@ class Header extends Component {
         </h1>
 
         <ul>
-          <li onClick={()=>{this.props.handleView('shoppinglist')}}>SHOPPING LIST</li>
+          <li onClick={()=>{this.props.handleView('shoppinglist')}}>{this.props.listCount}<br/>SHOPPING LIST</li>
 
           <li
-          onClick={()=>{this.props.handleView('refrigerator')}}>REFRIGERATOR</li>
-          
+          onClick={()=>{this.props.handleView('refrigerator')}}>{this.props.fridgeCount}<br/>REFRIGERATOR</li>
+
         </ul>
       </div>
     )
