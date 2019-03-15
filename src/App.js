@@ -16,12 +16,39 @@ class App extends Component {
     }
   }
 
-// =========================================
-// <<<<<<<<<<<HANDLE VIEW FUNCTION>>>>>>>>>>
-// =========================================
-handleView = (view)=>{
-  this.setState({currentView: view})
-}
+  // =========================================
+  // <<<<<<<<<<<HANDLE VIEW FUNCTION>>>>>>>>>>
+  // =========================================
+  handleView = (view)=>{
+    this.setState({currentView: view})
+  }
+
+
+
+
+  // ===========================================
+  // <<<<<<<HANDLE CREATE SHOPPING LIST ITEM>>>>
+  // ===========================================
+
+  handleCreateListItem = (item)=>{
+    console.log(item);
+    fetch('http://localhost:8888/list', {
+      body: JSON.stringify(item),
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(createdItem => {
+      return createdItem.json()
+    })
+    .then(jData => {
+      this.fetchShoppingList()
+    })
+    .catch(err => console.log(err))
+  }
+
 
 
 // =========================================
@@ -89,8 +116,9 @@ componentDidMount() {
           currentView={this.state.currentView}
           listItems={this.state.listItems}
           fridgeItems={this.state.fridgeItems}
-          handleShoppingList={this.state.handleShoppingList}
+          handleCreateListItem={this.handleCreateListItem}
         />
+
 
 
       </div>

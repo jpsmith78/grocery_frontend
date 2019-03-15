@@ -10,40 +10,42 @@ import FridgeForm from './FridgeForm'
 
 class List extends Component {
 
-  // ===========================================
-  // <<<<<<<<<<<HANDLE CREATE LIST ITEM>>>>>>>>>
-  // ===========================================
 
-  handleCreateListItem = (item)=>{
-    console.log(item);
-    fetch('http://localhost:8888/list', {
-      body: JSON.stringify(item),
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      }
-    })
-    .then(createdItem => {
-      return createdItem.json()
-    })
-    .then(jData => {
-      this.updateArray(jData, this.props.listItems)
-    })
-    .catch(err => console.log(err))
-  }
-
-// ===========================================
-// <<<<<<<<<<<<UPDATE ARRAY>>>>>>>>>>>>>>>>>>>
-// ===========================================
-updateArray = (item, array) => {
-  this.setState( prevState => {
-    prevState[array].push(item)
-    return {
-      [array]: prevState[array]
-    }
-  })
-}
+//
+//   // ===========================================
+//   // <<<<<<<<<<<HANDLE CREATE LIST ITEM>>>>>>>>>
+//   // ===========================================
+//
+//   handleCreateListItem = (item)=>{
+//     console.log(item);
+//     fetch('http://localhost:8888/list', {
+//       body: JSON.stringify(item),
+//       method: 'POST',
+//       headers: {
+//         'Accept': 'application/json, text/plain, */*',
+//         'Content-Type': 'application/json',
+//       }
+//     })
+//     .then(createdItem => {
+//       return createdItem.json()
+//     })
+//     .then(jData => {
+//       // this.updateArray(jData, jData)
+//     })
+//     .catch(err => console.log(err))
+//   }
+//
+// // ===========================================
+// // <<<<<<<<<<<<UPDATE ARRAY>>>>>>>>>>>>>>>>>>>
+// // ===========================================
+// updateArray = (item, array) => {
+//   this.setState( prevState => {
+//     prevState[array].push(item)
+//     return {
+//       [array]: prevState[array]
+//     }
+//   })
+// }
 // ===========================================
 // <<<<<<<<<<<<RENDER VIEW>>>>>>>>>>>>>>>>>>>>
 // ===========================================
@@ -63,7 +65,7 @@ updateArray = (item, array) => {
               )
             })}
             <ListForm
-              handleCreateListItem={this.handleCreateListItem}
+            handleCreateListItem={this.props.handleCreateListItem}
             />
           </div> :
           <div>
@@ -75,7 +77,9 @@ updateArray = (item, array) => {
                 />
               )
             })}
-            <FridgeForm />
+            <FridgeForm
+
+            />
           </div>
         }
       </div>
