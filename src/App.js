@@ -23,14 +23,14 @@ handleView = (view)=>{
   this.setState({currentView: view})
 }
 
+
 // =========================================
 // <<<<<<<<FETCH SHOPPING LIST FUNCTION>>>>>
 // =========================================
 fetchShoppingList = () => {
-  fetch('https://groceries-back.herokuapp.com/list')
+  fetch('http://localhost:8888/list')
       .then(data => data.json())
       .then(jData => {
-        console.log(jData)
         this.setItems(jData)
       })
 }
@@ -43,15 +43,13 @@ setItems =(list)=>{
     listItems: list
   })
 }
-
 // =========================================
 // <<<<<<<<FETCH REFRIGERATOR FUNCTION>>>>>
 // =========================================
 fetchRefrigerator = () => {
-  fetch('https://groceries-back.herokuapp.com/refrigerator')
+  fetch('http://localhost:8888/refrigerator')
       .then(data => data.json())
       .then(jData => {
-        console.log(jData)
         this.setFridge(jData)
       })
 }
@@ -91,6 +89,7 @@ componentDidMount() {
           currentView={this.state.currentView}
           listItems={this.state.listItems}
           fridgeItems={this.state.fridgeItems}
+          handleShoppingList={this.state.handleShoppingList}
         />
 
 
