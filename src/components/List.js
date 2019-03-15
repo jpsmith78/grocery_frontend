@@ -10,6 +10,9 @@ import FridgeForm from './FridgeForm'
 
 class List extends Component {
 
+  // ===========================================
+  // <<<<<<<<<<<HANDLE CREATE LIST ITEM>>>>>>>>>
+  // ===========================================
 
   handleCreateListItem = (item)=>{
     console.log(item);
@@ -25,12 +28,25 @@ class List extends Component {
       return createdItem.json()
     })
     .then(jData => {
-      console.log(jData);
+      this.updateArray(jData, this.props.listItems)
     })
     .catch(err => console.log(err))
   }
 
-
+// ===========================================
+// <<<<<<<<<<<<UPDATE ARRAY>>>>>>>>>>>>>>>>>>>
+// ===========================================
+updateArray = (item, array) => {
+  this.setState( prevState => {
+    prevState[array].push(item)
+    return {
+      [array]: prevState[array]
+    }
+  })
+}
+// ===========================================
+// <<<<<<<<<<<<RENDER VIEW>>>>>>>>>>>>>>>>>>>>
+// ===========================================
 
   render(){
     return(
