@@ -14,7 +14,7 @@ class FridgeItem extends Component {
         </div>
 
         <div className="fridge_action">
-          <button onClick={()=>{this.props.handleFridgeUpdate(this.props.item, this.props.arrayIndex, this.props.fridgeItems)}}>edit</button>
+          
           <UpdateFridge
             arrayIndex={this.props.index}
             item={this.props.item}

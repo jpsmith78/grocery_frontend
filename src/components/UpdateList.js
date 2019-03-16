@@ -12,7 +12,12 @@ class UpdateList extends Component {
       quantity: '',
       unit: '',
       recipe: '',
+      editView: 'hide'
     }
+  }
+
+  handleEditView = (view)=>{
+    this.setState({editView: view})
   }
 
   handleItemUpdate = (e)=>{
@@ -61,6 +66,10 @@ class UpdateList extends Component {
   render(){
     return(
       <div className="update_item">
+        <button onClick={()=>{this.handleEditView('edit')}}>show edit</button>
+        <button onClick={()=>{this.handleEditView('hide')}}>hide edit</button>
+
+        {this.state.editView === 'edit' ?
         <form onSubmit={this.handleListUpdateSubmit}>
           <input
           type="text"
@@ -98,7 +107,8 @@ class UpdateList extends Component {
           placeholder={this.props.item.recipe} /><br/>
 
           <button type="submit" className="submit-button">Submit</button>
-        </form>
+        </form> :
+          "" }
       </div>
     )
   }

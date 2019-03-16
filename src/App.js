@@ -79,7 +79,7 @@ class App extends Component {
 // =========================================
 // <<<<<<<<<<<HANDLE LIST UPDATE>>>>>>>>>>>
 // =========================================
-  handleListUpdate= (item, arrayIndex, currentArray)=>{
+  handleListUpdate = (item, arrayIndex, currentArray)=>{
     console.log(item)
 
     fetch(`http://localhost:8888/list/${item.id}`,{

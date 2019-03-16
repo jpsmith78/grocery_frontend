@@ -10,8 +10,14 @@ class UpdateFridge extends Component {
       fridge_category: '',
       fridge_quantity: '',
       fridge_unit: '',
+      editView: 'hide'
     }
   }
+
+  handleEditView = (view)=>{
+    this.setState({editView: view})
+  }
+
 
   handleFridgeItemUpdate = (e)=>{
     this.setState({ fridge_item: e.target.value})
@@ -46,6 +52,11 @@ class UpdateFridge extends Component {
   render(){
     return(
       <div className="update_fridge">
+        <button onClick={()=>{this.handleEditView('edit')}}>show edit</button>
+        <button onClick={()=>{this.handleEditView('hide')}}>hide edit</button>
+
+
+        {this.state.editView === 'edit' ?
         <form onSubmit={this.handleFridgeUpdateSubmit}>
 
           <input
@@ -71,7 +82,9 @@ class UpdateFridge extends Component {
           placeholder={this.props.item.fridge_unit}/><br/>
 
           <button type="submit" className="submit-button">Update</button>
-        </form>
+        </form> :
+          "" }
+
       </div>
     )
   }

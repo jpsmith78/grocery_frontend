@@ -27,7 +27,7 @@ class ListItem extends Component {
         </div>
 
         <div className="list_action">
-          <button onClick={()=>{this.props.handleListUpdate(this.props.item, this.props.arrayIndex, this.props.listItems)}}>edit</button>
+
           <UpdateList
             arrayIndex={this.props.index}
             item={this.props.item}
