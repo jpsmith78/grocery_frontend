@@ -100,7 +100,19 @@ class App extends Component {
 
   }
 
+  // =========================================
+  // <<<<<<<<<<<HANDLE LIST DELETE>>>>>>>>>>>
+  // =========================================
+  handleListDelete =(itemId, arrayIndex, currentArray)=>{
+    fetch(`http://localhost:8888/list/${itemId}`, {
+      method: 'DELETE'
+    })
+    .then(data => {
+      this.fetchShoppingList()
+    })
+    .catch(err => console.log(err))
 
+  }
 
 
 
@@ -156,11 +168,45 @@ fetchRefrigerator = () => {
 // =========================================
 // <<<<<<<<<<<HANDLE FRIDGE UPDATE>>>>>>>>>>>
 // =========================================
-  handleFridgeUpdate= (item, arrayIndex, currentArray)=>{
+  handleFridgeUpdate = (item, arrayIndex, currentArray)=>{
     console.log(item)
-    console.log(arrayIndex)
-    console.log(currentArray)
+
+    fetch(`http://localhost:8888/refrigerator/${item.id}`,{
+      body: JSON.stringify(item),
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(updatedItem =>{
+        return updatedItem.json()
+      })
+      .then(jData => {
+        this.fetchRefrigerator()
+      })
+      .catch(err => console.log(err))
+
   }
+
+  // =========================================
+  // <<<<<<<<<<<HANDLE FRIDGE DELETE>>>>>>>>>>>
+  // =========================================
+  handleFridgeDelete =(itemId, arrayIndex, currentArray)=>{
+    fetch(`http://localhost:8888/refrigerator/${itemId}`, {
+      method: 'DELETE'
+    })
+    .then(data => {
+      this.fetchRefrigerator()
+    })
+    .catch(err => console.log(err))
+
+  }
+
+
+
+
+
 
 // =========================================
 // <<<<<<<<<<<COMPONENT DID MOUNT>>>>>>>>>>>
@@ -192,6 +238,8 @@ fetchRefrigerator = () => {
           handleCreateFridgeItem={this.handleCreateFridgeItem}
           handleListUpdate={this.handleListUpdate}
           handleFridgeUpdate={this.handleFridgeUpdate}
+          handleListDelete={this.handleListDelete}
+          handleFridgeDelete={this.handleFridgeDelete}
         />
 
 

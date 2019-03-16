@@ -29,6 +29,7 @@ class List extends Component {
                   arrayIndex={index}
                   item={item}
                   handleListUpdate={this.props.handleListUpdate}
+                  handleListDelete={this.props.handleListDelete}
                   listItems={this.props.listItems}
                 />
               )
@@ -45,6 +46,7 @@ class List extends Component {
                   arrayIndex={index}
                   item={item}
                   handleFridgeUpdate={this.props.handleFridgeUpdate}
+                  handleFridgeDelete={this.props.handleFridgeDelete}
                   fridgeItems={this.props.fridgeItems}
                 />
               )

@@ -34,7 +34,7 @@ class ListItem extends Component {
             handleListUpdate={this.props.handleListUpdate}
             listItems={this.props.listItems}
           />
-          <button>delete</button>
+          <button className="delete_button" onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}}>delete</button>
         </div>
 
       </React.Fragment>
