@@ -26,7 +26,10 @@ class List extends Component {
               return(
                 <ListItem
                   key={index}
+                  arrayIndex={index}
                   item={item}
+                  handleListUpdate={this.props.handleListUpdate}
+                  listItems={this.props.listItems}
                 />
               )
             })}
@@ -39,7 +42,10 @@ class List extends Component {
               return(
                 <FridgeItem
                   key={index}
+                  arrayIndex={index}
                   item={item}
+                  handleFridgeUpdate={this.props.handleFridgeUpdate}
+                  fridgeItems={this.props.fridgeItems}
                 />
               )
             })}

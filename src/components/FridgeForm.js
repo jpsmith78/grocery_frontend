@@ -31,7 +31,6 @@ class FridgeForm extends Component {
 
   handleFridgeSubmit = (e)=>{
     e.preventDefault()
-    // console.log(this.state);
     this.props.handleCreateFridgeItem(this.state)
     this.clearFridgeForm()
   }
