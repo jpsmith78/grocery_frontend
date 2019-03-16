@@ -81,8 +81,23 @@ class App extends Component {
 // =========================================
   handleListUpdate= (item, arrayIndex, currentArray)=>{
     console.log(item)
-    console.log(arrayIndex)
-    console.log(currentArray)
+
+    fetch(`http://localhost:8888/list/${item.id}`,{
+      body: JSON.stringify(item),
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(updatedItem =>{
+        return updatedItem.json()
+      })
+      .then(jData => {
+        this.fetchShoppingList()
+      })
+      .catch(err => console.log(err))
+
   }
 
 

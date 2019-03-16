@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import UpdateFridge from './UpdateFridge'
 
 class FridgeItem extends Component {
   render(){
@@ -15,6 +15,7 @@ class FridgeItem extends Component {
 
         <div className="fridge_action">
           <button onClick={()=>{this.props.handleFridgeUpdate(this.props.item, this.props.arrayIndex, this.props.fridgeItems)}}>edit</button>
+          <UpdateFridge />
           <button>delete</button>
         </div>
 

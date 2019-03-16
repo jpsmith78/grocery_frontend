@@ -59,12 +59,39 @@ class ListForm extends Component {
       <div className="list-form">
         <h2>List Form</h2>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.item} onChange={this.handleItemChange} placeholder="new item" /><br/>
-          <input type="text" value={this.state.category} onChange={this.handleCategoryChange} placeholder="category" /><br/>
-          <input type="text" value={this.state.price} onChange={this.handlePriceChange} placeholder="price" /><br/>
-          <input type="text" value={this.state.quantity} onChange={this.handleQuantityChange} placeholder="quantity" /><br/>
-          <input type="text" value={this.state.unit} onChange={this.handleUnitChange} placeholder="unit" /><br/>
-          <input type="text" value={this.state.recipe} onChange={this.handleRecipeChange} placeholder="recipe" /><br/>
+          <input
+          type="text"
+          value={this.state.item}
+          onChange={this.handleItemChange}
+          placeholder="new item" /><br/>
+
+          <input
+          type="text"
+          value={this.state.category} onChange={this.handleCategoryChange}
+          placeholder="category" /><br/>
+
+          <input type="text"
+          value={this.state.price}
+          onChange={this.handlePriceChange}
+          placeholder="price" /><br/>
+
+          <input
+          type="text"
+          value={this.state.quantity} onChange={this.handleQuantityChange}
+          placeholder="quantity" /><br/>
+
+          <input
+          type="text"
+          value={this.state.unit}
+          onChange={this.handleUnitChange}
+          placeholder="unit" /><br/>
+
+          <input
+          type="text"
+          value={this.state.recipe}
+          onChange={this.handleRecipeChange}
+          placeholder="recipe" /><br/>
+          
           <button type="submit" className="submit-button">Submit</button>
         </form>
       </div>
