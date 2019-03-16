@@ -12,6 +12,7 @@ class ListItem extends Component {
           {this.props.item.price}<br/>
           {this.props.item.quantity}<br/>
           {this.props.item.unit}<br/>
+          {this.props.item.recipe}<br/>
           {this.props.item.have_at_home ?
             this.props.item.have_at_home.map((fridge_item, index)=>{
               return(

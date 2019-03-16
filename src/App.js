@@ -26,31 +26,9 @@ class App extends Component {
 
 
 
-  // ===========================================
-  // <<<<<<<HANDLE CREATE SHOPPING LIST ITEM>>>>
-  // ===========================================
-
-  handleCreateListItem = (item)=>{
-    console.log(item);
-    fetch('http://localhost:8888/list', {
-      body: JSON.stringify(item),
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      }
-    })
-    .then(createdItem => {
-      return createdItem.json()
-    })
-    .then(jData => {
-      this.fetchShoppingList()
-    })
-    .catch(err => console.log(err))
-  }
-
-
-
+  // =========================================
+  // <<<<<<<<!!!!!!! SHOPPING LIST !!!!!!>>>>>
+  // =========================================
 // =========================================
 // <<<<<<<<FETCH SHOPPING LIST FUNCTION>>>>>
 // =========================================
@@ -70,6 +48,35 @@ setItems =(list)=>{
     listItems: list
   })
 }
+
+// ===========================================
+// <<<<<<<HANDLE CREATE SHOPPING LIST ITEM>>>>
+// ===========================================
+
+handleCreateListItem = (item)=>{
+  console.log(item);
+  fetch('http://localhost:8888/list', {
+    body: JSON.stringify(item),
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+    }
+  })
+  .then(createdItem => {
+    return createdItem.json()
+  })
+  .then(jData => {
+    this.fetchShoppingList()
+  })
+  .catch(err => console.log(err))
+}
+
+
+
+// =========================================
+// <<<<<<<!!!!!!! REFRIGERATOR !!!!!!!!>>>>>
+// =========================================
 // =========================================
 // <<<<<<<<FETCH REFRIGERATOR FUNCTION>>>>>
 // =========================================
@@ -88,6 +95,30 @@ setFridge =(fridgeList)=>{
   this.setState({
     fridgeItems: fridgeList
   })
+}
+
+// ===========================================
+// <<<<<<<HANDLE CREATE REFRIGERATOR ITEM>>>>
+// ===========================================
+
+handleCreateFridgeItem = (item)=>{
+  console.log(item);
+  fetch('http://localhost:8888/refrigerator', {
+    body: JSON.stringify(item),
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+    }
+  })
+  .then(createdItem => {
+    return createdItem.json()
+  })
+  .then(jData => {
+    this.fetchRefrigerator()
+    this.fetchShoppingList()
+  })
+  .catch(err => console.log(err))
 }
 
 // =========================================
@@ -117,6 +148,7 @@ componentDidMount() {
           listItems={this.state.listItems}
           fridgeItems={this.state.fridgeItems}
           handleCreateListItem={this.handleCreateListItem}
+          handleCreateFridgeItem={this.handleCreateFridgeItem}
         />
 
 

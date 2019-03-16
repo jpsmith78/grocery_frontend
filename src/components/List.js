@@ -11,41 +11,7 @@ import FridgeForm from './FridgeForm'
 class List extends Component {
 
 
-//
-//   // ===========================================
-//   // <<<<<<<<<<<HANDLE CREATE LIST ITEM>>>>>>>>>
-//   // ===========================================
-//
-//   handleCreateListItem = (item)=>{
-//     console.log(item);
-//     fetch('http://localhost:8888/list', {
-//       body: JSON.stringify(item),
-//       method: 'POST',
-//       headers: {
-//         'Accept': 'application/json, text/plain, */*',
-//         'Content-Type': 'application/json',
-//       }
-//     })
-//     .then(createdItem => {
-//       return createdItem.json()
-//     })
-//     .then(jData => {
-//       // this.updateArray(jData, jData)
-//     })
-//     .catch(err => console.log(err))
-//   }
-//
-// // ===========================================
-// // <<<<<<<<<<<<UPDATE ARRAY>>>>>>>>>>>>>>>>>>>
-// // ===========================================
-// updateArray = (item, array) => {
-//   this.setState( prevState => {
-//     prevState[array].push(item)
-//     return {
-//       [array]: prevState[array]
-//     }
-//   })
-// }
+
 // ===========================================
 // <<<<<<<<<<<<RENDER VIEW>>>>>>>>>>>>>>>>>>>>
 // ===========================================
@@ -78,7 +44,7 @@ class List extends Component {
               )
             })}
             <FridgeForm
-
+              handleCreateFridgeItem={this.props.handleCreateFridgeItem}
             />
           </div>
         }
