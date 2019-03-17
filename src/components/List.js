@@ -32,24 +32,20 @@ class List extends Component {
                   <th>Unit</th>
                   <th>Recipe</th>
                   <th>In Refrigerator
-
-                      <table>
-                        <tbody>
+                    <table>
+                      <tbody>
                         <tr>
                           <th>Item</th>
                           <th>Category</th>
                           <th>Quantity</th>
                           <th>Unit</th>
                         </tr>
-                        </tbody>
-                        </table>
-                        </th>
-
+                      </tbody>
+                    </table>
+                  </th>
                   <th>Left to Buy</th>
                   <th>Edit</th>
                   <th>Delete</th>
-
-
                 </tr>
                 {this.props.listItems.map((item, index)=>{
                   return(

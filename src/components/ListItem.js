@@ -3,7 +3,6 @@ import UpdateList from './UpdateList'
 
 class ListItem extends Component {
   render(){
-    console.log(this.props);
     return (
       <React.Fragment>
 
@@ -37,16 +36,14 @@ class ListItem extends Component {
             </table>
           }
           </td>
-          <td>
             { this.props.item.have_at_home.length > 0 ? this.props.item.have_at_home.map((fridge_item, index)=>{
                 return(
-                    <li key={index}>
+                    <td key={index}>
                     {this.props.item.quantity -fridge_item.fridge_quantity}
-                    </li>
+                    </td>
                 )
-              }): <li>{this.props.item.quantity}</li>
+              }): <td>{this.props.item.quantity}</td>
             }
-          </td>
           <td><UpdateList
             arrayIndex={this.props.index}
             item={this.props.item}
