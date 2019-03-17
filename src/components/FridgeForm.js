@@ -45,31 +45,57 @@ class FridgeForm extends Component {
   render(){
     return(
       <div className="fridge-form">
-        <h2>Refrigerator Form</h2>
+        <h2>New Refrigerator Item</h2>
         <form onSubmit={this.handleFridgeSubmit}>
 
-          <input
-          type="text"
-          value={this.state.fridge_item}
-          onChange={this.handleFridgeItemChange}
-          placeholder="new refrigerator item"/><br/>
+          <label>
+            Item
+            <input
+            type="text"
+            value={this.state.fridge_item}
+            onChange={this.handleFridgeItemChange}
+            placeholder="new refrigerator item"/>
+          </label><br/>
 
-          <input
-          type="text"
-          value={this.state.fridge_category} onChange={this.handleFridgeCategoryChange}
-          placeholder="category"/><br/>
+          <label>
+            Category
+            <select
+            value={this.state.fridge_category}
+            onChange={this.handleFridgeCategoryChange}>
+              <option value="">Select Category</option>
+              <option value="produce">Produce</option>
+              <option value="meat/seafood">Meat/Seafood</option>
+              <option value="deli">Deli</option>
+              <option value="bakery">Bakery</option>
+              <option value="grocery">Grocery</option>
+              <option value="dairy">Dairy</option>
+              <option value="frozen">Frozen</option>
+            </select>
+          </label><br/>
 
-          <input
-          type="text"
-          value={this.state.fridge_quantity} onChange={this.handleFridgeQuantityChange}
-          placeholder="quantity"/><br/>
+          <label>
+            Quantity
+            <input
+            type="text"
+            value={this.state.fridge_quantity} onChange={this.handleFridgeQuantityChange}
+            placeholder="quantity"/>
+          </label><br/>
 
-          <input
-          type="text"
-          value={this.state.fridge_unit}
-          onChange={this.handleFridgeUnitChange}
-          placeholder="unit"/><br/>
-          
+          <label>
+            Unit
+            <select
+            value={this.state.fridge_unit}
+            onChange={this.handleFridgeUnitChange}>
+              <option value="">Select Unit</option>
+              <option value="each">Each</option>
+              <option value="pound">Pound</option>
+              <option value="each">Gallon</option>
+              <option value="quart">Quart</option>
+              <option value="each">Pint</option>
+              <option value="dozen">Dozen</option>
+            </select>
+          </label><br/>
+
           <button type="submit" className="submit-button">Submit</button>
         </form>
       </div>

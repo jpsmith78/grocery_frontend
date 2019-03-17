@@ -66,49 +66,84 @@ class UpdateList extends Component {
   render(){
     return(
       <div className="update_item">
-        <button onClick={()=>{this.handleEditView('edit')}}>show edit</button>
-        <button onClick={()=>{this.handleEditView('hide')}}>hide edit</button>
-
         {this.state.editView === 'edit' ?
-        <form onSubmit={this.handleListUpdateSubmit}>
-          <input
-          type="text"
-          value={this.state.item}
-          onChange={this.handleItemUpdate}
-          placeholder={this.props.item.item} /><br/>
+        <div className="update-form">
+          <button className="show-edit" onClick={()=>{this.handleEditView('hide')}}>hide edit</button>
+          <form onSubmit={this.handleListUpdateSubmit}>
 
-          <input
-          type="text"
-          value={this.state.category}
-          onChange={this.handleCategoryUpdate}
-          placeholder={this.props.item.category} /><br/>
+            <label>
+              Item
+              <input
+              type="text"
+              value={this.state.item}
+              onChange={this.handleItemUpdate}
+              placeholder={this.props.item.item} />
+            </label><br/>
 
-          <input type="text"
-          value={this.state.price}
-          onChange={this.handlePriceUpdate}
-          placeholder={this.props.item.price} /><br/>
+            <label>
+              Category
+              <select
+              value={this.state.category}
+              onChange={this.handleCategoryUpdate}>
+                <option value="">Select Category</option>
+                <option value="produce">Produce</option>
+                <option value="meat/seafood">Meat/Seafood</option>
+                <option value="deli">Deli</option>
+                <option value="bakery">Bakery</option>
+                <option value="grocery">Grocery</option>
+                <option value="dairy">Dairy</option>
+                <option value="frozen">Frozen</option>
+              </select>
+            </label><br/>
 
-          <input
-          type="text"
-          value={this.state.quantity}
-          onChange={this.handleQuantityUpdate}
-          placeholder={this.props.item.quantity} /><br/>
+            <label>
+              Price
+              <input type="text"
+              value={this.state.price}
+              onChange={this.handlePriceUpdate}
+              placeholder={this.props.item.price} />
+            </label><br/>
 
-          <input
-          type="text"
-          value={this.state.unit}
-          onChange={this.handleUnitUpdate}
-          placeholder={this.props.item.unit} /><br/>
+            <label>
+              Quantity
+              <input
+              type="text"
+              value={this.state.quantity}
+              onChange={this.handleQuantityUpdate}
+              placeholder={this.props.item.quantity} />
+            </label><br/>
 
-          <input
-          type="text"
-          value={this.state.recipe}
-          onChange={this.handleRecipeUpdate}
-          placeholder={this.props.item.recipe} /><br/>
+            <label>
+              Unit
+              <select
+              value={this.state.unit}
+              onChange={this.handleUnitUpdate}>
+                <option value="">Select Unit</option>
+                <option value="each">Each</option>
+                <option value="pound">Pound</option>
+                <option value="each">Gallon</option>
+                <option value="quart">Quart</option>
+                <option value="each">Pint</option>
+                <option value="dozen">Dozen</option>
+              </select>
+            </label><br/>
 
-          <button type="submit" className="submit-button">Submit</button>
-        </form> :
-          "" }
+            <label>
+              Recipe
+              <input
+              type="text"
+              value={this.state.recipe}
+              onChange={this.handleRecipeUpdate}
+              placeholder={this.props.item.recipe} />
+            </label><br/>
+
+
+            <button type="submit" className="submit-button">Submit</button>
+          </form>
+        </div>
+        :
+        <button className="hide-edit"         onClick={()=>{this.handleEditView('edit')}}>Edit</button>
+      }
       </div>
     )
   }

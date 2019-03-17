@@ -45,45 +45,74 @@ class UpdateFridge extends Component {
     this.setState({fridge_item: '',
     fridge_category: '',
     fridge_quantity: '',
-    fridge_unit: ''})
+    fridge_unit: '',})
   }
 
 
   render(){
     return(
       <div className="update_fridge">
-        <button onClick={()=>{this.handleEditView('edit')}}>show edit</button>
-        <button onClick={()=>{this.handleEditView('hide')}}>hide edit</button>
 
 
         {this.state.editView === 'edit' ?
-        <form onSubmit={this.handleFridgeUpdateSubmit}>
+        <div className="update-form">
+          <button onClick={()=>{this.handleEditView('hide')}}>hide edit</button>
+          <form onSubmit={this.handleFridgeUpdateSubmit}>
 
-          <input
-          type="text"
-          value={this.state.fridge_item}
-          onChange={this.handleFridgeItemUpdate}
-          placeholder={this.props.item.fridge_item}/><br/>
+            <label>
+              Item
+              <input
+              type="text"
+              value={this.state.fridge_item}
+              onChange={this.handleFridgeItemUpdate}
+              placeholder={this.props.item.fridge_item}/>
+            </label><br/>
 
-          <input
-          type="text"
-          value={this.state.fridge_category} onChange={this.handleFridgeCategoryUpdate}
-          placeholder={this.props.item.fridge_category}/><br/>
+            <label>
+              Category
+              <select
+              value={this.state.fridge_category}
+              onChange={this.handleFridgeCategoryUpdate}>
+                <option value="">Select Category</option>
+                <option value="produce">Produce</option>
+                <option value="meat/seafood">Meat/Seafood</option>
+                <option value="deli">Deli</option>
+                <option value="bakery">Bakery</option>
+                <option value="grocery">Grocery</option>
+                <option value="dairy">Dairy</option>
+                <option value="frozen">Frozen</option>
+              </select>
+            </label><br/>
 
-          <input
-          type="text"
-          value={this.state.fridge_quantity} onChange={this.handleFridgeQuantityUpdate}
-          placeholder={this.props.item.fridge_quantity}/><br/>
+            <label>
+              Quantity
+              <input
+              type="text"
+              value={this.state.fridge_quantity} onChange={this.handleFridgeQuantityUpdate}
+              placeholder={this.props.item.fridge_quantity}/><br/>
+            </label>
 
-          <input
-          type="text"
-          value={this.state.fridge_unit}
-          onChange={this.handleFridgeUnitUpdate}
-          placeholder={this.props.item.fridge_unit}/><br/>
+            <label>
+              Unit
+              <select
+              value={this.state.fridge_unit}
+              onChange={this.handleFridgeUnitUpdate}>
+                <option value="">Select Unit</option>
+                <option value="each">Each</option>
+                <option value="pound">Pound</option>
+                <option value="each">Gallon</option>
+                <option value="quart">Quart</option>
+                <option value="each">Pint</option>
+                <option value="dozen">Dozen</option>
+              </select>
+            </label><br/>
 
-          <button type="submit" className="submit-button">Update</button>
-        </form> :
-          "" }
+            <button type="submit" className="submit-button">Update</button>
+          </form>
+        </div>
+         :
+         <button onClick={()=>{this.handleEditView('edit')}}>Edit</button>
+       }
 
       </div>
     )

@@ -57,42 +57,78 @@ class ListForm extends Component {
   render(){
     return(
       <div className="list-form">
-        <h2>List Form</h2>
+        <h2>New List Item</h2>
         <form onSubmit={this.handleSubmit}>
-          <input
-          type="text"
-          value={this.state.item}
-          onChange={this.handleItemChange}
-          placeholder="new item" /><br/>
+          <label>
+            Item
+            <input
+            type="text"
+            value={this.state.item}
+            onChange={this.handleItemChange}
+            placeholder="new item" />
+          </label><br/>
 
-          <input
-          type="text"
-          value={this.state.category} onChange={this.handleCategoryChange}
-          placeholder="category" /><br/>
+          <label>
+            Category
+            <select
+            value={this.state.category}
+            onChange={this.handleCategoryChange}>
+              <option value="">Select Category</option>
+              <option value="produce">Produce</option>
+              <option value="meat/seafood">Meat/Seafood</option>
+              <option value="deli">Deli</option>
+              <option value="bakery">Bakery</option>
+              <option value="grocery">Grocery</option>
+              <option value="dairy">Dairy</option>
+              <option value="frozen">Frozen</option>
+            </select>
+          </label><br/>
 
-          <input type="text"
-          value={this.state.price}
-          onChange={this.handlePriceChange}
-          placeholder="price" /><br/>
+          <label>
+            Price
+            <input type="text"
+            value={this.state.price}
+            onChange={this.handlePriceChange}
+            placeholder="price" />
+          </label><br/>
 
-          <input
-          type="text"
-          value={this.state.quantity} onChange={this.handleQuantityChange}
-          placeholder="quantity" /><br/>
 
-          <input
-          type="text"
-          value={this.state.unit}
-          onChange={this.handleUnitChange}
-          placeholder="unit" /><br/>
+          <label>
+            Quantity
+            <input
+            type="text"
+            value={this.state.quantity} onChange={this.handleQuantityChange}
+            placeholder="quantity" />
+          </label><br/>
 
-          <input
-          type="text"
-          value={this.state.recipe}
-          onChange={this.handleRecipeChange}
-          placeholder="recipe" /><br/>
-          
-          <button type="submit" className="submit-button">Submit</button>
+
+          <label>
+            Unit
+            <select
+            value={this.state.unit}
+            onChange={this.handleUnitChange}>
+              <option value="">Select Unit</option>
+              <option value="each">Each</option>
+              <option value="pound">Pound</option>
+              <option value="each">Gallon</option>
+              <option value="quart">Quart</option>
+              <option value="each">Pint</option>
+              <option value="dozen">Dozen</option>
+            </select>
+          </label><br/>
+
+
+          <label>
+            Recipe
+            <input
+            type="text"
+            value={this.state.recipe}
+            onChange={this.handleRecipeChange}
+            placeholder="recipe" />
+          </label><br/>
+
+
+          <button type="submit" className="submit-button">Create Item</button>
         </form>
       </div>
     )
