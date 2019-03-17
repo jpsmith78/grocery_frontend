@@ -58,7 +58,7 @@ class App extends Component {
 // ===========================================
 
   handleCreateListItem = (item)=>{
-    console.log(item);
+    
     fetch('http://localhost:8888/list', {
       body: JSON.stringify(item),
       method: 'POST',
@@ -80,7 +80,6 @@ class App extends Component {
 // <<<<<<<<<<<HANDLE LIST UPDATE>>>>>>>>>>>
 // =========================================
   handleListUpdate = (item, arrayIndex, currentArray)=>{
-    console.log(item)
 
     fetch(`http://localhost:8888/list/${item.id}`,{
       body: JSON.stringify(item),
@@ -125,6 +124,7 @@ class App extends Component {
 // <<<<<<<<FETCH REFRIGERATOR FUNCTION>>>>>
 // =========================================
 fetchRefrigerator = () => {
+
   fetch('http://localhost:8888/refrigerator')
       .then(data => data.json())
       .then(jData => {
@@ -146,7 +146,7 @@ fetchRefrigerator = () => {
 // ===========================================
 
   handleCreateFridgeItem = (item)=>{
-    console.log(item);
+
     fetch('http://localhost:8888/refrigerator', {
       body: JSON.stringify(item),
       method: 'POST',
@@ -169,7 +169,6 @@ fetchRefrigerator = () => {
 // <<<<<<<<<<<HANDLE FRIDGE UPDATE>>>>>>>>>>>
 // =========================================
   handleFridgeUpdate = (item, arrayIndex, currentArray)=>{
-    console.log(item)
 
     fetch(`http://localhost:8888/refrigerator/${item.id}`,{
       body: JSON.stringify(item),

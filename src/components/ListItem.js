@@ -3,39 +3,59 @@ import UpdateList from './UpdateList'
 
 class ListItem extends Component {
   render(){
+    console.log(this.props);
     return (
       <React.Fragment>
 
-        <div className="list_item">
-          {this.props.item.item}<br/>
-          {this.props.item.category}<br/>
-          {this.props.item.price}<br/>
-          {this.props.item.quantity}<br/>
-          {this.props.item.unit}<br/>
-          {this.props.item.recipe}<br/>
-          {this.props.item.have_at_home ?
+        <tr>
+          <td>{this.props.item.item}</td>
+          <td>{this.props.item.category}</td>
+          <td>{this.props.item.price}</td>
+          <td>{this.props.item.quantity}</td>
+          <td>{this.props.item.unit}</td>
+          <td>{this.props.item.recipe}</td>
+          <td>{this.props.item.have_at_home.length > 0 ?
             this.props.item.have_at_home.map((fridge_item, index)=>{
               return(
-                <ul key={index}>
-                  <li>{fridge_item.fridge_item}</li>
-                  <li>{fridge_item.fridge_category}</li>
-                  <li>{fridge_item.fridge_quantity}</li>
-                  <li>{fridge_item.fridge_unit}</li>
-                </ul>
+                <table key={index}>
+                  <tbody>
+                    <tr>
+                      <td>{fridge_item.fridge_item}</td>
+                      <td>{fridge_item.fridge_category}</td>
+                      <td>{fridge_item.fridge_quantity}</td>
+                      <td>{fridge_item.fridge_unit}</td>
+                    </tr>
+                  </tbody>
+                </table>
               )
-            }) : ""}
-        </div>
-
-        <div className="list_action">
-
-          <UpdateList
+            }) : <table>
+              <tbody>
+                <tr>
+                  <td>None</td>
+                </tr>
+              </tbody>
+            </table>
+          }
+          </td>
+          <td>
+            { this.props.item.have_at_home.length > 0 ? this.props.item.have_at_home.map((fridge_item, index)=>{
+                return(
+                    <li key={index}>
+                    {this.props.item.quantity -fridge_item.fridge_quantity}
+                    </li>
+                )
+              }): <li>{this.props.item.quantity}</li>
+            }
+          </td>
+          <td><UpdateList
             arrayIndex={this.props.index}
             item={this.props.item}
             handleListUpdate={this.props.handleListUpdate}
             listItems={this.props.listItems}
-          />
-          <button className="delete_button" onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}}>delete</button>
-        </div>
+          /></td>
+          <td><button className="delete_button" onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}}>delete</button></td>
+
+        </tr>
 
       </React.Fragment>
     )
