@@ -37,7 +37,7 @@ class App extends Component {
 // <<<<<<<<FETCH SHOPPING LIST FUNCTION>>>>>
 // =========================================
   fetchShoppingList = () => {
-    fetch('https://groceries-back.herokuapp.com/list')
+    fetch('https://shopping-back.herokuapp.com/list')
         .then(data => data.json())
         .then(jData => {
           this.setItems(jData)
@@ -59,7 +59,7 @@ class App extends Component {
 
   handleCreateListItem = (item)=>{
 
-    fetch('https://groceries-back.herokuapp.com/list', {
+    fetch('https://shopping-back.herokuapp.com/list', {
       body: JSON.stringify(item),
       method: 'POST',
       headers: {
@@ -81,7 +81,7 @@ class App extends Component {
 // =========================================
   handleListUpdate = (item, arrayIndex, currentArray)=>{
 
-    fetch(`https://groceries-back.herokuapp.com/list/${item.id}`,{
+    fetch(`https://shopping-back.herokuapp.com/list/${item.id}`, {
       body: JSON.stringify(item),
       method: 'PUT',
       headers: {
@@ -103,7 +103,7 @@ class App extends Component {
   // <<<<<<<<<<<HANDLE LIST DELETE>>>>>>>>>>>
   // =========================================
   handleListDelete =(itemId, arrayIndex, currentArray)=>{
-    fetch(`https://groceries-back.herokuapp.com/list/${itemId}`, {
+    fetch(`https://shopping-back.herokuapp.com/list/${itemId}`, {
       method: 'DELETE'
     })
     .then(data => {
@@ -125,7 +125,7 @@ class App extends Component {
 // =========================================
 fetchRefrigerator = () => {
 
-  fetch('https://groceries-back.herokuapp.com/refrigerator')
+  fetch('https://shopping-back.herokuapp.com/refrigerator')
       .then(data => data.json())
       .then(jData => {
         this.setFridge(jData)
@@ -147,7 +147,7 @@ fetchRefrigerator = () => {
 
   handleCreateFridgeItem = (item)=>{
 
-    fetch('https://groceries-back.herokuapp.com/refrigerator', {
+    fetch('https://shopping-back.herokuapp.com/refrigerator', {
       body: JSON.stringify(item),
       method: 'POST',
       headers: {
@@ -170,7 +170,7 @@ fetchRefrigerator = () => {
 // =========================================
   handleFridgeUpdate = (item, arrayIndex, currentArray)=>{
 
-    fetch(`https://groceries-back.herokuapp.com/refrigerator/${item.id}`,{
+    fetch(`https://shopping-back.herokuapp.com/refrigerator/${item.id}`,{
       body: JSON.stringify(item),
       method: 'PUT',
       headers: {
@@ -192,7 +192,7 @@ fetchRefrigerator = () => {
   // <<<<<<<<<<<HANDLE FRIDGE DELETE>>>>>>>>>>>
   // =========================================
   handleFridgeDelete =(itemId, arrayIndex, currentArray)=>{
-    fetch(`https://groceries-back.herokuapp.com/refrigerator/${itemId}`, {
+    fetch(`https://shopping-back.herokuapp.com/refrigerator/${itemId}`, {
       method: 'DELETE'
     })
     .then(data => {

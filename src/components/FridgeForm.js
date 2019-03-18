@@ -89,9 +89,9 @@ class FridgeForm extends Component {
               <option value="">Select Unit</option>
               <option value="each">Each</option>
               <option value="pound">Pound</option>
-              <option value="each">Gallon</option>
+              <option value="gallon">Gallon</option>
               <option value="quart">Quart</option>
-              <option value="each">Pint</option>
+              <option value="pint">Pint</option>
               <option value="dozen">Dozen</option>
             </select>
           </label><br/>

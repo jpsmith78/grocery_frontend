@@ -51,8 +51,10 @@ class ListItem extends Component {
             </table>
           }
           </td>
+            <td>
             { this.props.item.have_at_home.length > 0 ? this.props.item.have_at_home.map((fridge_item, index)=>{
                 return(
+
                     <table key={index}>
                       <tbody>
                         <tr>
@@ -60,9 +62,9 @@ class ListItem extends Component {
                         </tr>
                       </tbody>
                     </table>
+
                 )
               }):
-              <td>
               <table>
                 <tbody>
                   <tr>
@@ -70,9 +72,9 @@ class ListItem extends Component {
                   </tr>
                 </tbody>
               </table>
-              </td>
-            }
 
+            }
+            </td>
           <td>
             <UpdateList
               arrayIndex={this.props.index}
@@ -82,7 +84,7 @@ class ListItem extends Component {
             /></td>
 
           <td>
-            <button className="delete_button" onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}}>delete</button></td>
+            <button className="delete_button" onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}}>Delete</button></td>
 
           <td>
             {this.state.checkView === "check" ? <button className="uncheck" onClick={()=>{this.handleCheckView('uncheck')}}>Uncheck</button> : <button className="check" onClick={()=>{this.handleCheckView('check')}}>Check</button>}
