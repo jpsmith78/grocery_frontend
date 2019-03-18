@@ -66,7 +66,7 @@ class ListForm extends Component {
             value={this.state.item}
             onChange={this.handleItemChange}
             placeholder="new item" />
-          </label><br/>
+          </label>
 
           <label>
             Category
@@ -82,7 +82,7 @@ class ListForm extends Component {
               <option value="dairy">Dairy</option>
               <option value="frozen">Frozen</option>
             </select>
-          </label><br/>
+          </label>
 
           <label>
             Price
@@ -90,7 +90,7 @@ class ListForm extends Component {
             value={this.state.price}
             onChange={this.handlePriceChange}
             placeholder="price" />
-          </label><br/>
+          </label>
 
 
           <label>
@@ -99,7 +99,7 @@ class ListForm extends Component {
             type="text"
             value={this.state.quantity} onChange={this.handleQuantityChange}
             placeholder="quantity" />
-          </label><br/>
+          </label>
 
 
           <label>
@@ -115,7 +115,7 @@ class ListForm extends Component {
               <option value="each">Pint</option>
               <option value="dozen">Dozen</option>
             </select>
-          </label><br/>
+          </label>
 
 
           <label>

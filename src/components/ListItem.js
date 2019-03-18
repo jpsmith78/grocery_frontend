@@ -22,6 +22,10 @@ class ListItem extends Component {
 
 
         <tr>
+          <td>
+            {this.state.checkView === "check" ? <button className="uncheck" onClick={()=>{this.handleCheckView('uncheck')}}>Uncheck</button> : <button className="check" onClick={()=>{this.handleCheckView('check')}}>Check</button>}
+          </td>
+
           {this.state.checkView === 'check' ? <td className="linethrough">{this.props.item.item} </td> : <td>{this.props.item.item}</td>}
           <td>{this.props.item.category}</td>
           <td>{this.props.item.price}</td>
@@ -86,17 +90,7 @@ class ListItem extends Component {
           <td>
             <button className="delete_button" onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}}>Delete</button></td>
 
-          <td>
-            {this.state.checkView === "check" ? <button className="uncheck" onClick={()=>{this.handleCheckView('uncheck')}}>Uncheck</button> : <button className="check" onClick={()=>{this.handleCheckView('check')}}>Check</button>}
-
-
-
-          </td>
-
         </tr>
-
-
-
 
       </React.Fragment>
     )

@@ -21,10 +21,15 @@ class List extends Component {
       <div className="list">
 
         {this.props.currentView === 'shoppinglist' ?
-          <div>
+
+          <div className="list-div">
+            <ListForm
+            handleCreateListItem={this.props.handleCreateListItem}
+            />
             <table>
               <tbody>
                 <tr>
+                  <th>Check</th>
                   <th>Item</th>
                   <th>Category</th>
                   <th>Price</th>
@@ -61,12 +66,11 @@ class List extends Component {
                 })}
               </tbody>
             </table>
-
-            <ListForm
-            handleCreateListItem={this.props.handleCreateListItem}
-            />
           </div> :
-          <div>
+          <div className="list-div">
+            <FridgeForm
+              handleCreateFridgeItem={this.props.handleCreateFridgeItem}
+            />
             <table>
               <tbody>
                 <tr>
@@ -92,11 +96,6 @@ class List extends Component {
                 })}
               </tbody>
             </table>
-
-            <FridgeForm
-              handleCreateFridgeItem={this.props.handleCreateFridgeItem}
-            />
-
           </div>
         }
       </div>

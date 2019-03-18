@@ -5,17 +5,18 @@ class Header extends Component {
   render(){
     return(
       <div className="header">
+
+        <h1>Welcome To Shopping List</h1>
         <h1>
-          {this.props.currentView === 'shoppinglist' ? 'SHOPPING LIST' : 'REFRIGERATOR'}
+          {this.props.currentView === 'shoppinglist' ? 'This Is Your List' : 'This Is Your Refrigerator'}
         </h1>
 
-        <ul>
-          <li onClick={()=>{this.props.handleView('shoppinglist')}}>{this.props.listCount}<br/>SHOPPING LIST</li>
+          <button onClick={()=>{this.props.handleView('shoppinglist')}}>{this.props.listCount} Items On Your Shopping List</button>
 
-          <li
-          onClick={()=>{this.props.handleView('refrigerator')}}>{this.props.fridgeCount}<br/>REFRIGERATOR</li>
+          <button
+          onClick={()=>{this.props.handleView('refrigerator')}}> {this.props.fridgeCount} Items In Your Refrigerator</button>
 
-        </ul>
+
       </div>
     )
   }
