@@ -2,12 +2,27 @@ import React, { Component } from 'react';
 import UpdateList from './UpdateList'
 
 class ListItem extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      checkView: 'uncheck',
+
+    }
+  }
+
+
+  handleCheckView = (view)=>{
+    this.setState({checkView: view})
+  }
+
+
   render(){
     return (
       <React.Fragment>
 
+
         <tr>
-          <td>{this.props.item.item}</td>
+          {this.state.checkView === 'check' ? <td className="linethrough">{this.props.item.item} </td> : <td>{this.props.item.item}</td>}
           <td>{this.props.item.category}</td>
           <td>{this.props.item.price}</td>
           <td>{this.props.item.quantity}</td>
@@ -38,21 +53,48 @@ class ListItem extends Component {
           </td>
             { this.props.item.have_at_home.length > 0 ? this.props.item.have_at_home.map((fridge_item, index)=>{
                 return(
-                    <td key={index}>
-                    {this.props.item.quantity -fridge_item.fridge_quantity}
-                    </td>
+                    <table key={index}>
+                      <tbody>
+                        <tr>
+                          <td>{this.props.item.quantity - fridge_item.fridge_quantity}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                 )
-              }): <td>{this.props.item.quantity}</td>
+              }):
+              <td>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>{this.props.item.quantity}</td>
+                  </tr>
+                </tbody>
+              </table>
+              </td>
             }
-          <td><UpdateList
-            arrayIndex={this.props.index}
-            item={this.props.item}
-            handleListUpdate={this.props.handleListUpdate}
-            listItems={this.props.listItems}
-          /></td>
-          <td><button className="delete_button" onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}}>delete</button></td>
+
+          <td>
+            <UpdateList
+              arrayIndex={this.props.index}
+              item={this.props.item}
+              handleListUpdate={this.props.handleListUpdate}
+              listItems={this.props.listItems}
+            /></td>
+
+          <td>
+            <button className="delete_button" onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}}>delete</button></td>
+
+          <td>
+            {this.state.checkView === "check" ? <button className="uncheck" onClick={()=>{this.handleCheckView('uncheck')}}>Uncheck</button> : <button className="check" onClick={()=>{this.handleCheckView('check')}}>Check</button>}
+
+
+
+          </td>
 
         </tr>
+
+
+
 
       </React.Fragment>
     )
