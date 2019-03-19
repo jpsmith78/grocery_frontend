@@ -1,3 +1,16 @@
+# Shopping List Front End
+
+## Technologies Used
+This is a react front end that utilizes a PHP backend that runs a PostgresSQL database.  I used SASS to style the page, and I linked to Font Awesome for my icons.
+
+## Approach Taken
+
+## Additions I Would Like To Make 
+
+## Wins
+
+## Technical Difficulties
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
