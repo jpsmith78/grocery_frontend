@@ -23,7 +23,7 @@ class ListItem extends Component {
 
         <tr>
           <td>
-            {this.state.checkView === "check" ? <button className="uncheck" onClick={()=>{this.handleCheckView('uncheck')}}>Uncross</button> : <button className="check" onClick={()=>{this.handleCheckView('check')}}>Cross Off List</button>}
+            {this.state.checkView === "check" ? <div className="red fa fa-check-square" onClick={()=>{this.handleCheckView('uncheck')}}></div> : <div className="fa fa-check-square" onClick={()=>{this.handleCheckView('check')}}></div>}
           </td>
 
           {this.state.checkView === 'check' ? <td className="linethrough">{this.props.item.item} </td> : <td>{this.props.item.item}</td>}
@@ -38,8 +38,6 @@ class ListItem extends Component {
                 <table key={index}>
                   <tbody>
                     <tr>
-                      <td>{fridge_item.fridge_item}</td>
-                      <td>{fridge_item.fridge_category}</td>
                       <td>{fridge_item.fridge_quantity}</td>
                       <td>{fridge_item.fridge_unit}</td>
                     </tr>
@@ -88,7 +86,7 @@ class ListItem extends Component {
             /></td>
 
           <td>
-            <button className="delete_button" onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}}>Delete</button></td>
+            <div onClick={()=>{this.props.handleListDelete(this.props.item.id, this.props.arrayIndex, this.props.listItems)}} className="fas fa-trash-alt"></div></td>
 
         </tr>
 

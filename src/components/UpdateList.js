@@ -68,81 +68,88 @@ class UpdateList extends Component {
       <div className="update_item">
         {this.state.editView === 'edit' ?
         <div className="update-form">
-          <button className="show-edit" onClick={()=>{this.handleEditView('hide')}}>hide edit</button>
+          <div onClick={()=>{this.handleEditView('hide')}} className="fas fa-minus-circle"></div>
           <form onSubmit={this.handleListUpdateSubmit}>
 
             <label>
               Item
+              <br/>
               <input
               type="text"
               value={this.state.item}
               onChange={this.handleItemUpdate}
               placeholder={this.props.item.item} />
-            </label><br/>
+            </label>
 
             <label>
               Category
+              <br/>
               <select
               value={this.state.category}
               onChange={this.handleCategoryUpdate}>
                 <option value="">Select Category</option>
                 <option value="produce">Produce</option>
-                <option value="meat/seafood">Meat/Seafood</option>
+                <option value="meat">Meat</option>
+                <option value="seafood">Seafood</option>
                 <option value="deli">Deli</option>
                 <option value="bakery">Bakery</option>
                 <option value="grocery">Grocery</option>
                 <option value="dairy">Dairy</option>
                 <option value="frozen">Frozen</option>
               </select>
-            </label><br/>
+            </label>
 
             <label>
               Price
+              <br/>
               <input type="text"
               value={this.state.price}
               onChange={this.handlePriceUpdate}
               placeholder={this.props.item.price} />
-            </label><br/>
+            </label>
 
             <label>
               Quantity
+              <br/>
               <input
               type="text"
               value={this.state.quantity}
               onChange={this.handleQuantityUpdate}
               placeholder={this.props.item.quantity} />
-            </label><br/>
+            </label>
 
             <label>
               Unit
+              <br/>
               <select
               value={this.state.unit}
               onChange={this.handleUnitUpdate}>
                 <option value="">Select Unit</option>
                 <option value="each">Each</option>
-                <option value="pound">Pound</option>
-                <option value="each">Gallon</option>
-                <option value="quart">Quart</option>
-                <option value="each">Pint</option>
+                <option value="lb(s)">Lb(s)</option>
+                <option value="gallon(s)">Gallon(s)</option>
+                <option value="quart(s)">Quart(s)</option>
+                <option value="pint(s)">Pint(s)</option>
                 <option value="dozen">Dozen</option>
               </select>
-            </label><br/>
+            </label>
 
             <label>
               Recipe
+              <br/>
               <input
               type="text"
               value={this.state.recipe}
               onChange={this.handleRecipeUpdate}
               placeholder={this.props.item.recipe} />
-            </label><br/>
+            </label>
 
 
             <button type="submit" className="submit-button">Submit</button>
           </form>
         </div>
         :
-        <button className="hide-edit"         onClick={()=>{this.handleEditView('edit')}}>Edit</button>
+        <div onClick={()=>{this.handleEditView('edit')}} className="fas fa-edit"></div>
       }
       </div>
     )

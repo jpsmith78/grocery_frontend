@@ -16,7 +16,7 @@ class FridgeItem extends Component {
               handleFridgeUpdate={this.props.handleFridgeUpdate}
               fridgeItems={this.props.fridgeItems}
             /></td>
-            <td><button className="delete_button" onClick={()=>{this.props.handleFridgeDelete(this.props.item.id, this.props.arrayIndex, this.props.fridgeItems)}}>delete</button></td>
+            <td><div onClick={()=>{this.props.handleFridgeDelete(this.props.item.id, this.props.arrayIndex, this.props.fridgeItems)}} className="fas fa-trash-alt"></div></td>
           </tr>
 
 

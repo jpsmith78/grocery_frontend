@@ -26,23 +26,21 @@ class List extends Component {
             <ListForm
             handleCreateListItem={this.props.handleCreateListItem}
             />
-            <table>
+            <table className="outer-table">
               <tbody>
                 <tr>
-                  <th>Cross Off Item</th>
+                  <th>Check</th>
                   <th>Item</th>
                   <th>Category</th>
                   <th>Price</th>
-                  <th>Quantity</th>
+                  <th>Qty</th>
                   <th>Unit</th>
                   <th>Recipe</th>
                   <th>In Refrigerator
                     <table>
                       <tbody>
                         <tr>
-                          <th>Item</th>
-                          <th>Category</th>
-                          <th>Quantity</th>
+                          <th>Qty</th>
                           <th>Unit</th>
                         </tr>
                       </tbody>
@@ -66,17 +64,20 @@ class List extends Component {
                 })}
               </tbody>
             </table>
+            <footer>
+            <h3>Thanks for shopping with us today!</h3>
+            </footer>
           </div> :
           <div className="list-div">
             <FridgeForm
               handleCreateFridgeItem={this.props.handleCreateFridgeItem}
             />
-            <table>
+            <table className="outer-table">
               <tbody>
                 <tr>
                   <th>Item</th>
                   <th>Category</th>
-                  <th>Quantity</th>
+                  <th>Qty</th>
                   <th>Unit</th>
                   <th>Edit</th>
                   <th>Delete</th>
@@ -96,8 +97,13 @@ class List extends Component {
                 })}
               </tbody>
             </table>
+            <footer>
+            <h3>Thanks for shopping with us today!</h3>
+            </footer>
           </div>
+
         }
+
       </div>
     )
   }

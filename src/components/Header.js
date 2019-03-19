@@ -6,7 +6,7 @@ class Header extends Component {
     return(
       <div className="header">
 
-        <h1>Welcome To Shopping List</h1>
+        <h1 className="header-one">Welcome To Shopping List</h1>
         <h1>
           {this.props.currentView === 'shoppinglist' ? 'This Is Your List' : 'This Is Your Refrigerator'}
         </h1>

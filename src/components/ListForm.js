@@ -85,7 +85,8 @@ class ListForm extends Component {
             onChange={this.handleCategoryChange}>
               <option value="">Select Category</option>
               <option value="produce">Produce</option>
-              <option value="meat/seafood">Meat/Seafood</option>
+              <option value="meat">Meat</option>
+              <option value="seafood">Seafood</option>
               <option value="deli">Deli</option>
               <option value="bakery">Bakery</option>
               <option value="grocery">Grocery</option>
@@ -124,10 +125,10 @@ class ListForm extends Component {
             onChange={this.handleUnitChange}>
               <option value="">Select Unit</option>
               <option value="each">Each</option>
-              <option value="pound">Pound</option>
-              <option value="each">Gallon</option>
-              <option value="quart">Quart</option>
-              <option value="each">Pint</option>
+              <option value="lb(s)">Lb(s)</option>
+              <option value="gallon(s)">Gallon(s)</option>
+              <option value="quart(s)">Quart(s)</option>
+              <option value="pint(s)">Pint(s)</option>
               <option value="dozen">Dozen</option>
             </select>
           </label>
