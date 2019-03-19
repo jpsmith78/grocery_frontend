@@ -29,7 +29,7 @@ class List extends Component {
             <table>
               <tbody>
                 <tr>
-                  <th>Check</th>
+                  <th>Cross Off Item</th>
                   <th>Item</th>
                   <th>Category</th>
                   <th>Price</th>

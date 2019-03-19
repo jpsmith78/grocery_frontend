@@ -1,0 +1,100 @@
+.input-style, .list-form form label input, .list-form form label select, .fridge-form form label input, .fridge-form form label select {
+  background: #F1FAEE;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 2%; }
+
+.button, .header > button, .show-form, .list-form form button, .fridge-form form button {
+  padding: 15px;
+  margin: 10px;
+  font-size: 14px;
+  border: 2px solid #F1FAEE;
+  border-radius: 4px;
+  background: #E63946;
+  color: #F1FAEE;
+  box-shadow: 2px 2px 2px black;
+  font-size: 16px; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo', sans-serif; }
+
+.main_container {
+  width: 100%;
+  text-align: center;
+  background: #F1FAEE; }
+
+.linethrough {
+  text-decoration: line-through; }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #457B9D; }
+
+h1 {
+  width: 100%;
+  margin-top: 40px;
+  color: #F1FAEE; }
+
+.list {
+  display: flex;
+  justify-content: center;
+  width: 100%; }
+
+.list-div {
+  width: 100%; }
+
+.list-form, .fridge-form {
+  display: flex;
+  flex-direction: column;
+  background: #1D3557;
+  color: #F1FAEE;
+  width: 60%;
+  margin: 20px auto;
+  border-radius: 6px;
+  padding: 10px; }
+
+.show-form {
+  width: 150px;
+  margin: auto;
+  background: #A8DADC;
+  color: #1D3557;
+  font-weight: bold; }
+
+.list-form form {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0 10%; }
+  .list-form form label {
+    font-size: 20px;
+    margin: 20px; }
+    .list-form form label select {
+      height: 31px; }
+  .list-form form button {
+    margin: 20px 20%;
+    width: 150px; }
+
+.fridge-form form {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0 15%; }
+  .fridge-form form label {
+    font-size: 20px;
+    margin: 20px; }
+    .fridge-form form label select {
+      height: 31px; }
+  .fridge-form form button {
+    margin: 20px 20%;
+    width: 150px; }
+
+/*# sourceMappingURL=main.css.map */

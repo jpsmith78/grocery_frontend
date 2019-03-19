@@ -23,7 +23,7 @@ class ListItem extends Component {
 
         <tr>
           <td>
-            {this.state.checkView === "check" ? <button className="uncheck" onClick={()=>{this.handleCheckView('uncheck')}}>Uncheck</button> : <button className="check" onClick={()=>{this.handleCheckView('check')}}>Check</button>}
+            {this.state.checkView === "check" ? <button className="uncheck" onClick={()=>{this.handleCheckView('uncheck')}}>Uncross</button> : <button className="check" onClick={()=>{this.handleCheckView('check')}}>Cross Off List</button>}
           </td>
 
           {this.state.checkView === 'check' ? <td className="linethrough">{this.props.item.item} </td> : <td>{this.props.item.item}</td>}

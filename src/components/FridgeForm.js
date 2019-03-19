@@ -10,7 +10,12 @@ class FridgeForm extends Component {
       fridge_category: '',
       fridge_quantity: '',
       fridge_unit: '',
+      formView: 'hide'
     }
+  }
+
+  handleFormView = (view)=>{
+    this.setState({formView: view})
   }
 
   handleFridgeItemChange = (e)=>{
@@ -46,19 +51,22 @@ class FridgeForm extends Component {
     return(
       <div className="fridge-form">
         <h2>New Refrigerator Item</h2>
+        {this.state.formView === 'form' ?
         <form onSubmit={this.handleFridgeSubmit}>
 
           <label>
             Item
+            <br/>
             <input
             type="text"
             value={this.state.fridge_item}
             onChange={this.handleFridgeItemChange}
             placeholder="new refrigerator item"/>
-          </label><br/>
+          </label>
 
           <label>
             Category
+            <br/>
             <select
             value={this.state.fridge_category}
             onChange={this.handleFridgeCategoryChange}>
@@ -71,18 +79,20 @@ class FridgeForm extends Component {
               <option value="dairy">Dairy</option>
               <option value="frozen">Frozen</option>
             </select>
-          </label><br/>
+          </label>
 
           <label>
             Quantity
+            <br/>
             <input
             type="text"
             value={this.state.fridge_quantity} onChange={this.handleFridgeQuantityChange}
             placeholder="quantity"/>
-          </label><br/>
+          </label>
 
           <label>
             Unit
+            <br/>
             <select
             value={this.state.fridge_unit}
             onChange={this.handleFridgeUnitChange}>
@@ -94,10 +104,11 @@ class FridgeForm extends Component {
               <option value="pint">Pint</option>
               <option value="dozen">Dozen</option>
             </select>
-          </label><br/>
+          </label>
 
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
+          <button type="submit" className="submit-button">Add Fridge Item</button>
+          <button onClick={()=>{this.handleFormView('hide')}}>Hide Form</button>
+        </form> : <button className="show-form" onClick={()=>{this.handleFormView('form')}}>Show Form</button> }
       </div>
     )
   }

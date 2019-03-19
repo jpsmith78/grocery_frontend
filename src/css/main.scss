@@ -1,0 +1,133 @@
+
+$main-desire : #E63946;
+$main-honeydew: #F1FAEE;
+$main-light-blue: #A8DADC;
+$main-queen-blue: #457B9D;
+$main-space-cadet: #1D3557;
+
+
+.input-style{
+  background: $main-honeydew;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 2%;
+}
+.button {
+  padding: 15px;
+  margin: 10px;
+  font-size: 14px;
+  border: 2px solid $main-honeydew;
+  border-radius: 4px;
+  background: $main-desire;
+  color: $main-honeydew;
+  box-shadow: 2px 2px 2px darken($main-space-cadet, 30%);
+  font-size: 16px;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo', sans-serif;
+}
+.main_container {
+  width: 100%;
+  text-align: center;
+  background: $main-honeydew;
+}
+.linethrough {
+  text-decoration: line-through;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: $main-queen-blue;
+}
+h1 {
+  width: 100%;
+  margin-top: 40px;
+  color: $main-honeydew;
+}
+.header > button{
+  @extend .button;
+}
+.list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.list-div {
+  width: 100%;
+}
+.list-form, .fridge-form {
+  display: flex;
+  flex-direction: column;
+  background: $main-space-cadet;
+  color: $main-honeydew;
+  width: 60%;
+  margin: 20px auto;
+  border-radius: 6px;
+  padding: 10px;
+}
+.show-form {
+  @extend .button;
+  width: 150px;
+  margin: auto;
+  background: $main-light-blue;
+  color: $main-space-cadet;
+  font-weight: bold;
+}
+.list-form{
+  form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 10%;
+    label {
+      font-size: 20px;
+      margin: 20px;
+      input{
+        @extend .input-style;
+      }
+      select {
+        @extend .input-style;
+        height: 31px;
+      }
+    }
+    button {
+      @extend .button;
+      margin: 20px 20%;
+      width: 150px;
+    }
+  }
+}
+.fridge-form{
+  form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 15%;
+    label {
+      font-size: 20px;
+      margin: 20px;
+      input{
+        @extend .input-style;
+      }
+      select {
+        @extend .input-style;
+        height: 31px;
+      }
+    }
+    button {
+      @extend .button;
+      margin: 20px 20%;
+      width: 150px;
+    }
+  }
+}

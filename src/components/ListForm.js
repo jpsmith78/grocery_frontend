@@ -11,7 +11,12 @@ class ListForm extends Component {
       quantity: '',
       unit: '',
       recipe: '',
+      formView: 'hide'
     }
+  }
+
+  handleFormView = (view)=>{
+    this.setState({formView: view})
   }
 
   handleItemChange = (e)=>{
@@ -57,19 +62,24 @@ class ListForm extends Component {
   render(){
     return(
       <div className="list-form">
+
         <h2>New List Item</h2>
+        {this.state.formView === 'form' ?
         <form onSubmit={this.handleSubmit}>
           <label>
             Item
+            <br/>
             <input
-            type="text"
-            value={this.state.item}
-            onChange={this.handleItemChange}
-            placeholder="new item" />
+              type="text"
+              value={this.state.item}
+              onChange={this.handleItemChange}
+              placeholder="new item"
+            />
           </label>
 
           <label>
             Category
+            <br/>
             <select
             value={this.state.category}
             onChange={this.handleCategoryChange}>
@@ -86,24 +96,29 @@ class ListForm extends Component {
 
           <label>
             Price
+            <br/>
             <input type="text"
-            value={this.state.price}
-            onChange={this.handlePriceChange}
-            placeholder="price" />
+              value={this.state.price}
+              onChange={this.handlePriceChange}
+              placeholder="price"
+            />
           </label>
 
 
           <label>
             Quantity
+            <br/>
             <input
-            type="text"
-            value={this.state.quantity} onChange={this.handleQuantityChange}
-            placeholder="quantity" />
+              type="text"
+              value={this.state.quantity} onChange={this.handleQuantityChange}
+              placeholder="quantity"
+            />
           </label>
 
 
           <label>
             Unit
+            <br/>
             <select
             value={this.state.unit}
             onChange={this.handleUnitChange}>
@@ -120,16 +135,18 @@ class ListForm extends Component {
 
           <label>
             Recipe
+            <br/>
             <input
-            type="text"
-            value={this.state.recipe}
-            onChange={this.handleRecipeChange}
-            placeholder="recipe" />
-          </label><br/>
+              type="text"
+              value={this.state.recipe}
+              onChange={this.handleRecipeChange}
+              placeholder="recipe"
+            />
+          </label>
 
-
-          <button type="submit" className="submit-button">Create Item</button>
-        </form>
+          <button type="submit" className="submit-button">Add List Item</button>
+          <button onClick={()=>{this.handleFormView('hide')}}>Hide Form</button>
+        </form> : <button className="show-form"         onClick={()=>{this.handleFormView('form')}}>Show Form</button>}
       </div>
     )
   }
