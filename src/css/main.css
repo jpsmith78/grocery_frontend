@@ -41,9 +41,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Exo', sans-serif;
-  font-weight: bold; }
+  display: flex;
+  flex-direction: column; }
+
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
 
 .main_container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   text-align: center;
   background: #F1FAEE; }
@@ -135,7 +147,8 @@ h1 {
   justify-content: center;
   width: 98%;
   margin: 75px auto;
-  background: #457B9D; }
+  background: #457B9D;
+  border-radius: 4px; }
   .outer-table tbody tr:nth-child(even) {
     background: #cce9eb; }
   .outer-table tbody tr:nth-child(odd) {
@@ -150,7 +163,8 @@ h1 {
         margin: auto;
         width: 100%; }
     .outer-table tbody tr td {
-      border: 1px solid #1D3557; }
+      border: 1px solid #1D3557;
+      font-weight: bold; }
       .outer-table tbody tr td table {
         margin: auto;
         width: 100%; }

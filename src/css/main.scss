@@ -49,9 +49,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Exo', sans-serif;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .main_container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   text-align: center;
   background: $main-honeydew;
@@ -169,6 +181,7 @@ h1 {
   width: 98%;
   margin: 75px auto;
   background: $main-queen-blue;
+  border-radius: 4px;
   tbody{
     tr:nth-child(even){
       background: lighten($main-light-blue, 10%);
@@ -189,6 +202,7 @@ h1 {
       }
       td {
         border: 1px solid $main-space-cadet;
+        font-weight: bold;
         table {
           margin: auto;
           width: 100%;
