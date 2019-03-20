@@ -62,7 +62,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  min-width: 700px;
+  min-width: 100%;
   background: #457B9D;
   padding: 20px 0;
   border-bottom: 2px solid #1D3557; }
@@ -72,7 +72,7 @@ body {
 
 h1 {
   width: 60%;
-  margin: 40px 200px 20px 200px;
+  margin: 40px 30% 20px 30%;
   color: #F1FAEE; }
 
 .list {
@@ -182,7 +182,7 @@ h1 {
       width: 210px; }
 
 footer {
-  min-width: 700px;
+  min-width: 100%;
   background: #457B9D;
   padding: 20px 0;
   border-top: 2px solid #1D3557; }
