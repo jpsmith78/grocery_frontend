@@ -61,7 +61,8 @@ body {
   align-items: center;
   width: 100%;
   background: #457B9D;
-  padding: 20px; }
+  padding: 20px;
+  border-bottom: 2px solid #1D3557; }
 
 .header-one {
   font-size: 44px; }
