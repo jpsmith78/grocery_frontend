@@ -20,6 +20,7 @@ class UpdateList extends Component {
     this.setState({editView: view})
   }
 
+
   handleItemUpdate = (e)=>{
     this.setState({item: e.target.value})
   }
